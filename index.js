@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentFilter = "*";
     const products = [
         {
-            name: "Площа Перемоги — серце сучасного Житомира",
+            name: "Корольовський районний суд",
             img: "/img/project/project_2.png",
             category: "Фото",
             tags: ["Житомир", "Україна"],
@@ -226,6 +226,31 @@ document.addEventListener("DOMContentLoaded", function () {
             year: "2025",
             linkDetails: "#",
         },
+        {
+            name: "Свято-Михайлівський кафедральний собор",
+            img: "/img/project/project_4.jpg",
+            category: "Фото",
+            tags: ["Житомир", "Україна"],
+            year: "2025",
+            linkDetails: "#",
+        },
+        {
+            name: "Кафедральний костел Святої Софії ",
+            img: "https://vandrivka.com.ua/wp-content/uploads/2019/07/Kafedralnij-kostel-Svyatoyi-Sofiyi-m.-ZHitomir-2.jpg",
+            category: "Фото",
+            tags: ["Житомир", "Україна"],
+            year: "2025",
+            linkDetails: "#",
+        },
+        {
+            name: "Вулиця Михайлівська – серце Житомира, яке пульсує історією та життям міста! ",
+            img: "https://upload.wikimedia.org/wikipedia/commons/a/a9/%D0%96%D0%B8%D1%82%D0%BE%D0%BC%D0%B8%D1%80_%D0%B2_%D0%B8%D1%8E%D0%BD%D0%B5_2020_%D0%B3%D0%BE%D0%B4%D0%B0%2C_34.jpg",
+            category: "Фото",
+            tags: ["Житомир", "Україна"],
+            year: "2025",
+            linkDetails: "#",
+        },
+
     ];
 
     function createCard(product) {
@@ -459,7 +484,11 @@ document.getElementById("contact-form").addEventListener("submit", function(even
     const status = document.getElementById("form-status");
     const data = new FormData(form);
   
-    // Відправляємо форму через прихований iframe — без перезавантаження
+    // Показуємо індикатор завантаження
+    status.style.display = "block";
+    status.style.color = "#00ccff";
+    status.textContent = "⏳ Відправляється...";
+  
     fetch(form.action, {
       method: form.method,
       body: data,
@@ -468,6 +497,7 @@ document.getElementById("contact-form").addEventListener("submit", function(even
       if (response.ok) {
         form.reset();
         status.style.display = "block";
+        status.style.color = "#00ff99";
         status.textContent = "✅ Повідомлення надіслано!";
       } else {
         status.style.display = "block";
@@ -480,3 +510,16 @@ document.getElementById("contact-form").addEventListener("submit", function(even
       status.textContent = "❌ Виникла помилка при відправленні.";
     });
   });
+
+
+
+
+
+
+
+
+
+
+
+
+  
